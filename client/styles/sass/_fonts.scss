@@ -1,0 +1,56 @@
+/* Branded Font Family
+//-------------------------------------------------- */
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.fonts.com
+*/
+
+//normal_400  NHG-W01-55-Txt
+@font-face{
+	font-family:"ThingSpace";
+	font-weight: 400;
+	src:url("https://cdn.thingspace.verizon.com/fonts/d24ae558-ac0f-4a43-96da-dd49b68947f5.eot?#iefix");
+	src:url("https://cdn.thingspace.verizon.com/fonts/d24ae558-ac0f-4a43-96da-dd49b68947f5.eot?#iefix") format("eot"),
+		url("https://cdn.thingspace.verizon.com/fonts/a14594bf-73de-4b5f-9792-9566994a021d.woff2") format("woff2"),
+		url("https://cdn.thingspace.verizon.com/fonts/bb4a10bb-155d-4c1a-a813-c65e10fac36c.woff") format("woff"),
+		url("https://cdn.thingspace.verizon.com/fonts/53812a68-b352-4951-b19c-fe964db7ffe2.ttf") format("truetype"),
+		url("https://cdn.thingspace.verizon.com/fonts/389e288e-637b-44b2-9b5a-4ecec3ae8e2c.svg#389e288e-637b-44b2-9b5a-4ecec3ae8e2c") format("svg");
+}
+
+//normal_500  NHG-W01-65-TxtMd
+@font-face{
+	font-family:"ThingSpace";
+	font-weight: 500;
+	src:url("https://cdn.thingspace.verizon.com/fonts/fca16206-1413-42b5-b3dd-ce6499d2bd3f.eot?#iefix");
+	src:url("https://cdn.thingspace.verizon.com/fonts/fca16206-1413-42b5-b3dd-ce6499d2bd3f.eot?#iefix") format("eot"),
+		url("https://cdn.thingspace.verizon.com/fonts/34ae0cd2-c49c-4df4-8270-fcda21c1b715.woff2") format("woff2"),
+		url("https://cdn.thingspace.verizon.com/fonts/9e666926-4bc9-4013-849e-dffa25a41dbd.woff") format("woff"),
+		url("https://cdn.thingspace.verizon.com/fonts/37e13425-7daf-407c-ba41-43ebd7d30855.ttf") format("truetype"),
+		url("https://cdn.thingspace.verizon.com/fonts/9cd38052-e8fa-4a89-bfee-01d1675c9aa1.svg#9cd38052-e8fa-4a89-bfee-01d1675c9aa1") format("svg");
+}
+
+//Disp_normal_600  NHG-W01-65-DspMd
+@font-face{
+	font-family:"ThingSpace";
+	font-weight: 600;
+	src:url("https://cdn.thingspace.verizon.com/fonts/83d6b8f7-bd47-4e8d-a359-27b74d3100f6.eot?#iefix");
+	src:url("https://cdn.thingspace.verizon.com/fonts/83d6b8f7-bd47-4e8d-a359-27b74d3100f6.eot?#iefix") format("eot"),
+		url("https://cdn.thingspace.verizon.com/fonts/75e1af8f-1a4c-475a-8b53-f27e52822b6b.woff2") format("woff2"),
+		url("https://cdn.thingspace.verizon.com/fonts/2ba6fbd5-9c17-4733-af15-f49fbecc5c15.woff") format("woff"),
+		url("https://cdn.thingspace.verizon.com/fonts/7dcf6c37-4fb4-4211-9808-6a39bfa89e0d.ttf") format("truetype"),
+		url("https://cdn.thingspace.verizon.com/fonts/1baaf9ba-feec-45ca-a826-7bcf9f8e5b21.svg#1baaf9ba-feec-45ca-a826-7bcf9f8e5b21") format("svg");
+}
+
+//Disp_normal_700 NHG-W01-75-DspBd
+@font-face{
+	font-family:"ThingSpace";
+	font-weight: 700;
+	src:url("https://cdn.thingspace.verizon.com/fonts/ed82538c-6090-4c05-ac72-c636496df8de.eot?#iefix");
+	src:url("https://cdn.thingspace.verizon.com/fonts/ed82538c-6090-4c05-ac72-c636496df8de.eot?#iefix") format("eot"),
+		url("https://cdn.thingspace.verizon.com/fonts/c24b7456-b9fe-40ab-94af-ba8d3025fada.woff2") format("woff2"),
+		url("https://cdn.thingspace.verizon.com/fonts/da47ecd2-feea-403e-b247-9f8f5bb5157b.woff") format("woff"),
+		url("https://cdn.thingspace.verizon.com/fonts/0deba34f-9242-462b-a359-74e95714f821.ttf") format("truetype"),
+		url("https://cdn.thingspace.verizon.com/fonts/31c5f190-f4d8-436b-99bf-0561dd448586.svg#31c5f190-f4d8-436b-99bf-0561dd448586") format("svg");
+}
