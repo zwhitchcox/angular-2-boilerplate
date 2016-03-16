@@ -10,11 +10,15 @@ var path = require('path');
 var config = require('./config/environment');
 
 module.exports = function (app) {
+  app
+    .use(require('./components/userService'))
+  app
+    .use('/api/v1/home', require('./api/home'));
 
-  // Insert routes below
-  app.use('/api/v1/home',require('./api/home'));
+  app
+    .use('/api/auth', require('./api/user'))
 
-    // Return API Version
+  // Return API Version
   app.route('/api').get(function(req, res) {
     res.json({"name": pkg.name, "version": "v1", "rev": pkg.version });
   });

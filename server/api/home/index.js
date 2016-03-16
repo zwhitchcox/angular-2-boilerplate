@@ -8,7 +8,6 @@ var homeService = require('../../components/homeService');
 
 
 router.get('/', function(req, res) {
-
   homeService.setup(config);
 
   homeService.get(function(err, result) {

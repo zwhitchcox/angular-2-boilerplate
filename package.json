@@ -41,6 +41,7 @@
     "karma-ng-html2js-preprocessor": "^0.2.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "main-bower-files": "^2.11.1",
+    "node-pg-migrate": "0.0.9",
     "run-sequence": "^1.1.5",
     "should": "^8.2.2",
     "streamqueue": "^1.1.1",
@@ -49,16 +50,20 @@
   "dependencies": {
     "async": "^1.5.2",
     "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
     "chalk": "^1.1.1",
     "compression": "^1.6.1",
     "cookie-parser": "^1.4.1",
     "debug": "^2.2.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
     "lodash": "^4.6.1",
     "method-override": "^2.3.5",
     "morgan": "^1.7.0",
+    "pg": "^4.5.1",
     "ripe": "^0.2.1",
+    "stormpath": "^0.18.0",
     "verror": "^1.6.1"
   },
   "engines": {

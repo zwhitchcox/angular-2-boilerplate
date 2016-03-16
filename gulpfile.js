@@ -25,5 +25,5 @@ gulp.task('docker', ['build'], $.shell.task([
 ]));
 
 gulp.task('deploy', ['docker'], $.shell.task([
-  'docker run -d -p 3000:9000 --restart=always -e NODE_ENV=production --name site irvui'
+  'docker run -d -p 3000:3000 --restart=always -e NODE_ENV=production --name site irvui'
 ]));

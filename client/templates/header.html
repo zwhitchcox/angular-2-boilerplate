@@ -14,14 +14,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="nav-main-wrapper">
         <ul class="nav navbar-nav nav-main">
-          <li ng-class="vm.getClass('/fonts')"><a href="/fonts">Fonts</a></li>
-          <li ng-class="vm.getClass('/colors')"><a href="/colors">Colors</a></li>
-          <li ng-class="vm.getClass('/icons')"><a href="/icons">Icons</a></li>
         </ul>
       </div>
     </div>
-    <div class="header-text-right pull-right clearfix">
-      <h2>Web Generator</h2>
+    <div class="pull-right clearfix">
+      <ul class="nav navbar-nav nav-main" ng-controller="NavLoginCtrl as nav">
+        <li><a ui-sref="login" ng-if="!nav.state.isLoggedIn">Login</a></li>
+        <li><a ui-sref="register" ng-if="!nav.state.isLoggedIn">Register</a></li>
+        <li><a ui-sref="account" ng-if="nav.state.isLoggedIn">My Account</a></li>
+        <li><a ui-sref="logout" ng-if="nav.state.isLoggedIn">Logout</a></li>
+      </ul>
     </div>
   </div>
 </nav>
+

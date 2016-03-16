@@ -1,0 +1,72 @@
+<div class="row col-sm-6 col-sm-offset-3">
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Register New Account</h4></div>
+  <div class="panel-body">
+    <form ng-submit="register.register(register.credentials)">
+      <div class="alert alert-danger" ng-show="register.msg !== undefined">
+        {{register.msg}}
+      </div>
+      <div class="form-group" >
+        <label for="fname">First Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="First Name" 
+          ng-model="register.credentials.givenName"
+          required
+        />
+      </div>
+      <div class="form-group" >
+        <label for="lname">Last Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Last Name" 
+          ng-model="register.credentials.surname"
+          required
+        />
+      </div>
+      <div class="form-group" >
+        <label for="company">Company</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Company" 
+          ng-model="register.credentials.customData.company"
+        />
+      </div>
+      <div class="form-group" >
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          placeholder="Email" 
+          ng-model="register.credentials.email"
+          required
+        />
+      </div>
+      <div class="form-group" >
+        <label for="username">Username</label>
+        <input 
+          type="username" 
+          class="form-control" 
+          placeholder="Username" 
+          ng-model="register.credentials.username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Password</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          placeholder="Password" 
+          ng-model="register.credentials.password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success col-md-12">
+        Register
+      </button>
+    </form>
+</div>
+</div>

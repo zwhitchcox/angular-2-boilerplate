@@ -52,6 +52,8 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/restangular/dist/restangular.js"></script>
   <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
@@ -59,9 +61,17 @@
   <!-- build:js app.js -->
   <!-- inject:js -->
   <script src="app/app.js"></script>
-  <script src="app/home/home.module.js"></script>
-  <script src="app/home/home.controller.js"></script>
+  <script src="app/home/home.ctrl.js"></script>
   <script src="app/home/home.route.js"></script>
+  <script src="app/user/config.js"></script>
+  <script src="app/user/ctrl.account.js"></script>
+  <script src="app/user/ctrl.login.js"></script>
+  <script src="app/user/ctrl.logout.js"></script>
+  <script src="app/user/ctrl.navlogin.js"></script>
+  <script src="app/user/ctrl.register.js"></script>
+  <script src="app/user/ctrl.reset.js"></script>
+  <script src="app/user/run.js"></script>
+  <script src="app/user/service.login.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
 

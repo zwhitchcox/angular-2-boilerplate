@@ -5,6 +5,7 @@
 
 module.exports = [
   'client/app/*.js',
+  'client/app/**/*.js',
   'client/app/**/*.module.js',
   'client/app/**/*.*.js',
   '!' + 'client/app/**/*.spec.js',

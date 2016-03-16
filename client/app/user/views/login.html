@@ -1,0 +1,34 @@
+<div class="row col-sm-6 col-sm-offset-3">
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Login</h4></div>
+  <div class="panel-body">
+    <form ng-submit="login.login(credentials)">
+      <div class="alert alert-danger" ng-show="login.msg !== undefined">
+        {{login.msg}}
+      </div>
+      <div class="form-group" >
+        <label for="email">Username or Email</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Email" 
+          ng-model="credentials.username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Password</label>
+        <input 
+          type="password" 
+          class="form-control" 
+          placeholder="Password" 
+          ng-model="credentials.password"
+        />
+      </div>
+      <button type="submit" class="btn btn-success col-md-12">
+        Login
+      </button>
+    </form>
+    <a style="margin-top:10px;display:inline-block;" ui-sref="reset">Reset your password</a>
+  </div>
+</div>
+</div>

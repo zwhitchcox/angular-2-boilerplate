@@ -1,0 +1,25 @@
+<div class="row col-sm-6 col-sm-offset-3">
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Reset Password</h4></div>
+  <div class="panel-body">
+    <form ng-submit="reset.reset(reset.email)">
+      <div class="alert alert-danger" ng-show="login.msg !== undefined">
+        {{login.msg}}
+      </div>
+      <div class="form-group" >
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          placeholder="Email" 
+          ng-model="reset.email"
+        />
+      </div>
+      <button type="submit" class="btn btn-success col-md-12">
+        Reset
+      </button>
+    </form>
+    <a style="margin-top:10px;display:inline-block;" ui-sref="reset">Reset your password</a>
+  </div>
+</div>
+</div>

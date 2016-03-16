@@ -1,0 +1,66 @@
+<div class="row col-sm-6 col-sm-offset-3">
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>Edit Account Info</h4></div>
+  <div class="panel-body">
+    <form ng-submit="account.update(account.info)">
+      <div class="alert alert-danger" ng-show="account.msg !== undefined">
+        {{account.msg}}
+      </div>
+      <div class="alert alert-info" ng-show="account.successMsg !== undefined">
+        {{account.successMsg}}
+      </div>
+      <div class="form-group" >
+        <label for="fname">First Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="First Name" 
+          ng-model="account.info.givenName"
+          required
+        />
+      </div>
+      <div class="form-group" >
+        <label for="lname">Last Name</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Last Name" 
+          ng-model="account.info.surname"
+          required
+        />
+      </div>
+      <div class="form-group" >
+        <label for="company">Company</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Company" 
+          ng-model="account.info.customData.company"
+        />
+      </div>
+      <div class="form-group" >
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          placeholder="Email" 
+          ng-model="account.info.email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Username" 
+          ng-model="account.info.username"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success col-md-12">
+        Update
+      </button>
+    </form>
+</div>
+</div>
