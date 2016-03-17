@@ -1,7 +1,7 @@
 'use strict'
 const config = require('../../config/environment/'+process.env.NODE_ENV || 'development')
 const jwt = require('jsonwebtoken')
-const client = require('../../api/stormpath/client')
+const client = require('../../api/utils/stormpath').client
 function checkAuth (req, res, next) {
   let authHeader, token, elements, scheme;
   authHeader = req.get('Authorization')

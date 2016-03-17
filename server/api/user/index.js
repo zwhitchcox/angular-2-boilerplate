@@ -31,7 +31,8 @@ function authenticate(req, res) {
     username: req.body.username,
     password: req.body.password
   }
-  require('../stormpath/app')
+  require('../utils/stormpath')
+    .app
     .then((app) => {
       app
         .authenticateAccount(authRequest, (err, user) => {
@@ -67,7 +68,8 @@ function authenticate(req, res) {
 function register(req, res) {
   let account = _.pick(req.body, USER_SCHEMA)
   account.customData = _.pick(account.customData, CUSTOM_DATA_SCHEMA)
-  require('../stormpath/app')
+  require('../utils/stormpath')
+    .app
     .then((app) => {
       app
         .createAccount(account, (err, user) => {
@@ -100,18 +102,25 @@ function register(req, res) {
     })
 }
 
-function reset(req, res) {
-  let email = req.body.email
-  require('../stormpath/app')
-    .then((app) => {
+function reset(req, res) {     
+  let email = req.body.email   
+  require('../utils/stormpath')
+    .app
+    .then((app) => {           
       app
         .sendPasswordResetEmail({email:email}, (err, passwordResetToken) => {
+          if (err) {
+            console.error(err) 
+            res.status(400).end('Oops!  There was an error: ' + err.userMessage)
+          } else {             
+            res.status(200).end('Please check your email for a link to set a new password.')
+          }
         })
     })
-    .catch((err) => {
-      console.log(err)
+    .catch((err) => {          
+      console.log(err)         
     })
-}
+} 
 
 function update(req,res) {
   let newUserData = _.pick(req.body,USER_SCHEMA)

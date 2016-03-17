@@ -44,7 +44,7 @@ gulp.task('usemin', ['inject'], function () {
 gulp.task('cssmin', function () {
   return gulp.src('dist/client/app.css')
     .pipe($.autoprefixer())
-    .pipe($.minifyCss())
+    .pipe($.cleanCss())
     .pipe(gulp.dest('dist/client/'));
 });
 
