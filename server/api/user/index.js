@@ -71,14 +71,20 @@ function register(req, res) {
     .then((app) => {
       app
         .createAccount(account, (err, user) => {
-          if (err) res
-            .status(401)
-            .send(err.userMessage)
+          if (err) {
+            console.error(err)
+            res
+              .status(401)
+              .send(err.userMessage)
+          }
           else user
             .getCustomData((err,customData) => {
-              if (err) res
-                .status(401)
-                .send(err.userMessage)
+              if (err) {
+                console.error(err)
+                res
+                  .status(401)
+                  .send(err.userMessage)
+              }
               else {
                 user = _.pick(user,USER_SCHEMA)
                 user.customData = _.pick(customData,CUSTOM_DATA_SCHEMA)
