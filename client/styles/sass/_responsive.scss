@@ -55,6 +55,9 @@
         }
       }
     } 
+    .login-nav {
+      display:none;
+    }
     .navbar-default {
       .navbar-collapse {
         margin-top: 4px;
@@ -63,6 +66,9 @@
         background: #f4f4f4;
         position: relative;
         z-index: 9;
+        .login-nav {
+          display:block;
+        }
       }
     }
     .footer {
@@ -133,12 +139,18 @@
           }
         }
       }
+      .login-nav {
+        display:block;
+      }
     }
     .navbar-default .navbar-collapse {
       margin-top: 0px;
       margin-left: 18%;
       float: left;
       background-color: transparent;
+      .login-nav {
+        display:none;;
+      }
     }
     .footer {
       .navbar.navbar-cd .navbar-header {

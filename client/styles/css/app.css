@@ -6237,6 +6237,8 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
           .navbar.navbar-cd .nav-main li a:active {
             color: #cd040b;
             background-color: #ffffff; }
+  .login-nav {
+    display: none; }
   .navbar-default .navbar-collapse {
     margin-top: 4px;
     margin-left: -15px;
@@ -6244,6 +6246,8 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
     background: #f4f4f4;
     position: relative;
     z-index: 9; }
+    .navbar-default .navbar-collapse .login-nav {
+      display: block; }
   .footer .copyrights {
     margin-top: 0px; } }
 
@@ -6289,11 +6293,15 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
           background-color: transparent; }
         .navbar.navbar-cd .nav-main > li:last-child {
           margin-right: 0px; }
+  .navbar .login-nav {
+    display: block; }
   .navbar-default .navbar-collapse {
     margin-top: 0px;
     margin-left: 18%;
     float: left;
     background-color: transparent; }
+    .navbar-default .navbar-collapse .login-nav {
+      display: none; }
   .footer .navbar.navbar-cd .navbar-header {
     margin-right: 0px;
     padding-bottom: 0px; }

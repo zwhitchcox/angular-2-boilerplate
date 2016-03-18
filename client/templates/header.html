@@ -14,10 +14,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="nav-main-wrapper">
         <ul class="nav navbar-nav nav-main">
+        <span class="login-nav">
+        <li><a ui-sref="login" ng-if="!nav.state.isLoggedIn">Login</a></li>
+        <li><a ui-sref="register" ng-if="!nav.state.isLoggedIn">Register</a></li>
+        <li><a ui-sref="account" ng-if="nav.state.isLoggedIn">My Account</a></li>
+        <li><a ui-sref="logout" ng-if="nav.state.isLoggedIn">Logout</a></li>
         </ul>
+        </span>
       </div>
     </div>
-    <div class="pull-right clearfix">
+    <div class="pull-right clearfix login-nav">
       <ul class="nav navbar-nav nav-main" ng-controller="NavLoginCtrl as nav">
         <li><a ui-sref="login" ng-if="!nav.state.isLoggedIn">Login</a></li>
         <li><a ui-sref="register" ng-if="!nav.state.isLoggedIn">Register</a></li>
