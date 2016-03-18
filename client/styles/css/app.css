@@ -6150,7 +6150,6 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
 
 .navbar-default .navbar-collapse {
   margin-left: 5%;
-  float: left;
   background-color: transparent; }
 
 .footer {
@@ -6240,6 +6239,7 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
   .login-nav {
     display: none; }
   .navbar-default .navbar-collapse {
+    overflow-y: hidden;
     margin-top: 4px;
     margin-left: -15px;
     float: none;
