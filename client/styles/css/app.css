@@ -6248,6 +6248,20 @@ Imaging with any questions regarding Web Fonts:  http://www.fonts.com
     z-index: 9; }
     .navbar-default .navbar-collapse .login-nav {
       display: block; }
+    .navbar-default .navbar-collapse .nav-main {
+      text-align: center; }
+      .navbar-default .navbar-collapse .nav-main li {
+        margin-right: 0px;
+        border-bottom: 1px solid #CCCCCC;
+        line-height: 2; }
+        .navbar-default .navbar-collapse .nav-main li a {
+          font-size: 16px;
+          color: #000000;
+          font-family: Thingspace;
+          font-weight: 600; }
+          .navbar-default .navbar-collapse .nav-main li a:active {
+            color: #cd040b;
+            background-color: #ffffff; }
   .footer .copyrights {
     margin-top: 0px; } }
 

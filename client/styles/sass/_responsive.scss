@@ -69,6 +69,24 @@
         .login-nav {
           display:block;
         }
+        .nav-main {
+          text-align: center;
+          li {
+            margin-right: 0px;
+            border-bottom: 1px solid $lighter-gray;
+            line-height:2;
+            a {
+              font-size: 16px;
+              color: $black;
+              font-family: Thingspace;
+              font-weight: 600;
+              &:active {
+                color: $red;
+                background-color: $white;
+              }
+            }
+          }
+        }
       }
     }
     .footer {
