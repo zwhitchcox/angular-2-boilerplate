@@ -16,9 +16,9 @@
         .then(getResponse, onErr)
     }
 
-    function getResponse(token) {
-      if (token) {
-        $window.localStorage.token = token
+    function getResponse(jwt) {
+      if (jwt) {
+        $window.localStorage.jwt = jwt
         Login.isLoggedIn = true
         $state.go('home')
       } else {

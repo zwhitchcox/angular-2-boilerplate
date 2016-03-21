@@ -11,8 +11,8 @@
     function authInterceptor($window) {
       return {
         request: function (config) {
-          if ($window.localStorage.token) {
-            config.headers.Authorization = 'Bearer ' + $window.localStorage.token
+          if ($window.localStorage.jwt) {
+            config.headers.Authorization = 'Bearer ' + $window.localStorage.jwt
           }
           return config
         }
@@ -26,7 +26,7 @@
         resolve: {
           loggedin: ['$window', '$timeout', '$state',
             function ($window, $timeout, $state) {
-              if (!$window.localStorage.token)
+              if (!$window.localStorage.jwt)
                 $timeout(function() {
                   $state.go('login')
                 })

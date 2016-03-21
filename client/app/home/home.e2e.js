@@ -7,7 +7,7 @@ describe('home route', function () {
   });
 
   it('should have a basic content', function () {
-    expect(element.all(by.css('div')).first().getText()).toBe('Irving User Interface Team');
+    expect(element.all(by.css('h3')).first().getText()).toBe('Irving User Interface Team');
   });
 
 });

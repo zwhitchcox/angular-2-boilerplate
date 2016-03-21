@@ -7,8 +7,7 @@
   function AccountCtrl(Restangular, $window, Login) {
     var vm = this
     vm.update = update
-    vm.token = 
-    vm.info = decodeToken(window.localStorage.token).claim
+    vm.info = decodeJwt(window.localStorage.jwt).claim
     var account = Restangular.all('api/auth/update')
     function update(accountInfo) {
       account
@@ -16,9 +15,9 @@
         .then(getToken, onErr)
     }
 
-    function getToken(token) {
-      if (token) {
-        $window.localStorage.token = token
+    function getToken(jwt) {
+      if (jwt) {
+        $window.localStorage.jwt = jwt
         Login.isLoggedIn = true
         vm.successMsg = 'Information Updated'
         vm.msg = undefined
@@ -33,11 +32,11 @@
       vm.successMsg = undefined
     }
 
-    function decodeToken(token) {
+    function decodeJwt(jwt) {
 
       var parts, header, claim, signature;
-      token = token || '';
-      parts = token.split('.');
+      jwt = jwt || '';
+      parts = jwt.split('.');
       if (parts.length === 3) {
         header = parts[0];
         claim = parts[1];

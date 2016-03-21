@@ -26,7 +26,6 @@
     "gulp-open": "^1.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-print": "^2.0.1",
-    "gulp-protractor": "^2.1.0",
     "gulp-sass": "^2.2.0",
     "gulp-shell": "^0.5.2",
     "gulp-uglify": "^1.5.3",
@@ -57,11 +56,13 @@
     "debug": "^2.2.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "gulp-protractor": "^2.2.0",
     "jsonwebtoken": "^5.7.0",
     "lodash": "^4.6.1",
     "method-override": "^2.3.5",
     "morgan": "^1.7.0",
     "pg": "^4.5.1",
+    "protractor": "^3.2.1",
     "ripe": "^0.2.1",
     "stormpath": "^0.18.0",
     "verror": "^1.6.1"
@@ -71,6 +72,8 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "test": "gulp test"
+    "test": "gulp test",
+    "e2eUpdate": "node --eval 'require(\"./tasks/test\").e2eUpdate()'",
+    "e2e": "NODE_ENV=test node --eval 'require(\"./tasks/test\").e2eTests()'"
   }
 }

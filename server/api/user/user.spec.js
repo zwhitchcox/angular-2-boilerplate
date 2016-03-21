@@ -56,7 +56,6 @@ describe('Stormcloak testing', () => {
       if (err) throw new Error(err)
       result.getAccount((err, account) => {
       if (err) throw new Error(err)
-        console.log('Account:', account)
         done()
       })
     })

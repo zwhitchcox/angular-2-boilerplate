@@ -7,7 +7,7 @@
 
   function loginFactory($window, $timeout, $state) {
     var isLoggedIn;
-    if ($window.localStorage.token) {
+    if ($window.localStorage.jwt) {
       isLoggedIn = true
     } else {
       isLoggedIn = false
