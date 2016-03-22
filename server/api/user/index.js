@@ -103,23 +103,50 @@ function register(req, res) {
 }
 
 function reset(req, res) {     
-  let email = req.body.email   
-  require('../utils/stormpath')
-    .app
-    .then((app) => {           
-      app
-        .sendPasswordResetEmail({email:email}, (err, passwordResetToken) => {
-          if (err) {
-            console.error(err) 
-            res.status(400).end('Oops!  There was an error: ' + err.userMessage)
-          } else {             
-            res.status(200).end('Please check your email for a link to set a new password.')
-          }
+  if (req.body.email) {
+    let email = req.body.email   
+    require('../utils/stormpath')
+      .app
+      .then((app) => {           
+        app
+          .sendPasswordResetEmail({email:email}, (err, passwordResetToken) => {
+            if (err) {
+              res.status(400).end('Oops!  There was an error: ' + err.userMessage)
+            } else {             
+              res.status(200).end('Please check your email for a link to set a new password.')
+            }
+          })
+      })
+      .catch((err) => {          
+        console.log(err)         
+        res.status(400).end('Oops!  There was an error')
+      })
+  } else {
+    let password = req.body.password
+    let token    = req.body.token
+    require('../utils/stormpath')
+      .app
+      .then((app) => {
+        app
+          .resetPassword(token, password, (err, result) => {
+            console.log('here')
+            if ( err) {
+              console.log(err)
+              res
+                .status(400)
+                .end('Oops! There was an error: ' + 
+                  err.userMessage)
+            } else {
+              let user = _.pick(req.body, USER_SCHEMA)
+              user.customData = 
+                _.pick(user.customData, CUSTOM_DATA_SCHEMA)
+              res
+                .status(200)
+                .send(jwt.sign(user,config.secret)) 
+            }
         })
-    })
-    .catch((err) => {          
-      console.log(err)         
-    })
+      })
+  }
 } 
 
 function update(req,res) {

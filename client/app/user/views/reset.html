@@ -2,20 +2,29 @@
 <div class="panel panel-default">
   <div class="panel-heading"><h4>Reset Password</h4></div>
   <div class="panel-body">     
-    <form ng-submit="reset.reset(reset.email)">
+    <form ng-submit="reset.reset(reset.userInfo)">
       <div class="alert alert-danger" ng-show="reset.errMsg !== undefined">
         {{reset.errMsg}}       
       </div>                   
       <div class="alert alert-info" ng-show="reset.msg !== undefined">
         {{reset.msg}}
       </div>
-      <div class="form-group" >
+      <div ng-if="!reset.sptoken" class="form-group" >
         <label for="email">Email Address</label>
         <input 
           type="email"         
           class="form-control" 
           placeholder="Email"  
-          ng-model="reset.email"
+          ng-model="reset.userInfo"
+        />
+      </div>
+      <div ng-if="reset.sptoken" class="form-group" >
+        <label for="password">New Password</label>
+        <input 
+          type="password"         
+          class="form-control" 
+          placeholder="New Password"  
+          ng-model="reset.userInfo"
         />
       </div>
       <button type="submit" class="btn btn-success col-md-12">
