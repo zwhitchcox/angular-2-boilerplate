@@ -5,6 +5,7 @@ const jwt         = require('jsonwebtoken')
 const _           = require('lodash')
 const config      = require('../../config/environment/development')
 const isAuth      = require('./is-auth')
+const client = require('../../api/utils/stormpath').client
 const USER_SCHEMA = [
   'givenName',
   'surname',
@@ -129,7 +130,6 @@ function reset(req, res) {
       .then((app) => {
         app
           .resetPassword(token, password, (err, result) => {
-            console.log('here')
             if ( err) {
               console.log(err)
               res
@@ -137,12 +137,16 @@ function reset(req, res) {
                 .end('Oops! There was an error: ' + 
                   err.userMessage)
             } else {
-              let user = _.pick(req.body, USER_SCHEMA)
-              user.customData = 
-                _.pick(user.customData, CUSTOM_DATA_SCHEMA)
-              res
-                .status(200)
-                .send(jwt.sign(user,config.secret)) 
+              client.getAccount(result.account.href, (err, account) => {
+                account.getCustomData((err,customData) => {
+                  let user = _.pick(account, USER_SCHEMA)
+                  user.customData = 
+                    _.pick(customData, CUSTOM_DATA_SCHEMA)
+                  res
+                    .status(200)
+                    .send(jwt.sign(user,config.secret))
+                })
+              })
             }
         })
       })

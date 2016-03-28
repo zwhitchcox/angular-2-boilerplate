@@ -14,7 +14,6 @@ module.exports = function (app) {
     .use(require('./components/userService'))
   app
     .use('/api/v1/home', require('./api/home'));
-
   app
     .use('/api/auth', require('./api/user'))
 
